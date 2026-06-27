@@ -1,0 +1,6 @@
+{
+  "name": "A22A Onboarding & History Slide Deck",
+  "description": "An interactive, beautifully designed welcome presentation and historical timeline for A22A (AI Transformation Malaysia).",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  /* Brand color palette re-mapped to a clean light mode with deep slate accents */
+  --color-brand-navy: #0f172a;
+  --color-brand-navy-dark: #1e293b;
+  --color-brand-blue-deep: #1e3a8a;
+  --color-brand-blue-med: rgba(15, 23, 42, 0.08);
+  --color-brand-blue-teal: #0f172a;
+  --color-brand-blue-light: #2563eb;
+  --color-brand-cyan-glow: #2563eb;
+  --color-brand-sky: #3b82f6;
+  --color-brand-pale: #64748b;
+  --color-brand-ice: #f8fafc;
+  --color-brand-soft-white: #ffffff;
+  --color-brand-bg: #ffffff;
+  
+  /* Accent colors */
+  --color-brand-red: #ef4444;
+  --color-brand-orange: #f97316;
+  --color-brand-ochre: #d97706;
+  --color-brand-gold: #b45309;
+
+  /* Standard aliases used by the Bento Cards demo */
+  --color-background: #ffffff;
+  --color-foreground: #0f172a;
+
+  /* Animated Gradient configuration */
+  --animate-background-gradient: background-gradient var(--background-gradient-speed, 15s) cubic-bezier(0.445, 0.05, 0.55, 0.95) infinite;
+
+  @keyframes background-gradient {
+    0%, 100% {
+      transform: translate(0, 0);
+      animation-delay: var(--background-gradient-delay, 0s);
+    }
+    20% {
+      transform: translate(calc(100% * var(--tx-1, 1)), calc(100% * var(--ty-1, 1)));
+    }
+    40% {
+      transform: translate(calc(100% * var(--tx-2, -1)), calc(100% * var(--ty-2, 1)));
+    }
+    60% {
+      transform: translate(calc(100% * var(--tx-3, 1)), calc(100% * var(--ty-3, -1)));
+    }
+    80% {
+      transform: translate(calc(100% * var(--tx-4, -1)), calc(100% * var(--ty-4, -1)));
+    }
+  }
+}
+
+/* Custom background styles for the Sleek Interface noisy light gradient background */
+.noisy-bg {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 50%, #f1f5f9 100%);
+  position: relative;
+}
+
+.noisy-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.02; /* Subtle noise overlay */
+  z-index: 1;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(37, 99, 235, 0.15);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(37, 99, 235, 0.3);
+}
